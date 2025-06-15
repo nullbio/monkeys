@@ -1,0 +1,57 @@
+# Adaptive Multi-Agent LLM Configuration
+
+model:
+  base_model: "Qwen/Qwen2.5-3B"  # Using Qwen2.5-3B as Qwen-3-4B might not be available
+  num_agents: 5
+  shared_layers: 20  # Number of transformer layers to share
+  device: "cuda"  # cuda or cpu
+  precision: "fp16"  # fp16, fp32, or int8
+  gradient_checkpointing: true  # Enabled to save memory
+  
+frequency_bias:
+  bias_type: "emotional"  # emotional, content, functional, or custom
+  bias_strength: 0.35  # Increased for more noticeable agent differences
+  target_tokens: []  # Specific tokens to bias (empty = automatic selection)
+  temperature_range: [0.7, 1.3]  # Temperature variation per agent
+  
+emotion_detection:
+  enabled: true
+  vector_dim: 64
+  meta_signals_enabled: true
+  signal_examples_path: "data/signal_examples/"
+  context_window: 50  # Tokens to consider for emotion
+  update_frequency: 5  # Update emotion every N tokens
+  
+decay:
+  base_rate: 0.1
+  learn_decay: true
+  min_decay: 0.01
+  max_decay: 0.5
+  context_window: 100
+  baseline_shift_threshold: 0.8  # Emotion strength to shift baseline
+  
+training:
+  batch_size: 2  # Reduced for 5 agents training simultaneously
+  learning_rate: 1e-4
+  num_epochs: 10
+  warmup_steps: 500
+  gradient_accumulation_steps: 8  # Increased to get effective batch size of 16
+  mixed_precision: true
+  
+compression:
+  method: "harmonic"  # harmonic, svd, or none
+  compression_ratio: 0.1  # Target size relative to original
+  frequency_components: 1000  # Number of frequency components to keep
+  
+reinforcement:
+  enabled: true
+  reward_buffer_size: 1000
+  discount_factor: 0.95
+  exploration_rate: 0.1
+  update_interval: 100  # Update RL model every N interactions
+  
+logging:
+  level: "INFO"
+  wandb_project: "adaptive-llm-agents"
+  save_interval: 1000
+  checkpoint_dir: "checkpoints/"

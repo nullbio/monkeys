@@ -1,0 +1,70 @@
+# Example emotion signal conventions for meta-learning
+
+basic_signals:
+  - pattern: "---"
+    emotion: "unhappiness"
+    intensity: -3
+    description: "Strong negative emotion"
+  
+  - pattern: "--"
+    emotion: "frustration"
+    intensity: -2
+    description: "Moderate frustration"
+  
+  - pattern: "-"
+    emotion: "negativity"
+    intensity: -1
+    description: "Slight negative feeling"
+  
+  - pattern: "+"
+    emotion: "positivity"
+    intensity: 1
+    description: "Slight positive feeling"
+  
+  - pattern: "++"
+    emotion: "happiness"
+    intensity: 2
+    description: "Moderate happiness"
+  
+  - pattern: "+++"
+    emotion: "joy"
+    intensity: 3
+    description: "Strong positive emotion"
+
+special_signals:
+  - pattern: "!!!"
+    emotion: "excitement"
+    intensity: 5
+    description: "Extreme excitement or enthusiasm"
+  
+  - pattern: "???"
+    emotion: "confusion"
+    intensity: 0
+    description: "Deep confusion or uncertainty"
+  
+  - pattern: "..."
+    emotion: "contemplation"
+    intensity: 0
+    description: "Thoughtful, contemplative state"
+  
+  - pattern: "~~~"
+    emotion: "neutral"
+    intensity: 0
+    description: "Neutral, indifferent state"
+
+custom_examples:
+  # Examples of how users might define their own signals
+  - prompt: "When I use [angry] it means I'm at -5 anger level"
+    pattern: "[angry]"
+    emotion: "anger"
+    intensity: -5
+  
+  - prompt: "^^^ indicates I'm feeling inspired (+4)"
+    pattern: "^^^"
+    emotion: "inspiration"
+    intensity: 4
+  
+  - prompt: "Using ### means I'm feeling overwhelmed (-4)"
+    pattern: "###"
+    emotion: "overwhelm"
+    intensity: -4
