@@ -1,0 +1,128 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# PyTorch / ML Models
+*.pth
+*.pt
+*.ckpt
+*.bin
+*.safetensors
+models/downloaded/
+models/checkpoints/
+models/cache/
+*.model
+*.pkl
+*.pickle
+
+# Weights and Training Data
+training/checkpoints/
+training/logs/
+training/runs/
+training/artifacts/
+*.log
+logs/
+runs/
+checkpoints/
+wandb/
+mlruns/
+
+# Data Files
+data/processed/
+data/raw/
+data/cache/
+data/temp/
+*.csv
+*.json
+*.jsonl
+*.txt
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Environment and Config
+.env
+.envrc
+*.env
+.env.local
+.env.production
+.env.staging
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+htmlcov/
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+
+# Cache and Temp
+.cache/
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Claude memories (project-specific)
+.claude-memories/
+
+# GPU/CUDA
+*.cuda
+*.cubin
+
+# Compression artifacts
+compression/cache/
+*.compressed
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
