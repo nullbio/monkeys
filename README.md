@@ -18,7 +18,7 @@ This system trains multiple Qwen-3-4B models in parallel with slightly altered t
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/adaptive-llm-agents.git
+git clone https://github.com/nullbio/adaptive-llm-agents.git
 cd adaptive-llm-agents
 
 # Install dependencies
@@ -61,6 +61,7 @@ adaptive-llm-agents/
 ## 🔧 Configuration
 
 ### Basic Configuration (config.yaml)
+
 ```yaml
 model:
   base_model: "qwen-3-4b"
@@ -84,6 +85,7 @@ decay:
 ## 🎯 Usage Examples
 
 ### Basic Usage
+
 ```python
 from models import MultiAgentQwen
 
@@ -99,6 +101,7 @@ response = system.generate(
 ```
 
 ### Custom Signal Convention
+
 ```python
 # Define custom emotion signals in prompt
 system_prompt = """
@@ -112,6 +115,7 @@ system.set_meta_signals(system_prompt)
 ```
 
 ### Accessing Agent Spectrum
+
 ```python
 # Interpolate between agents
 blended_response = system.generate(
@@ -123,6 +127,7 @@ blended_response = system.generate(
 ## 📊 Training
 
 ### Phase 1: Initial Agent Training
+
 ```bash
 python train_agents.py \
     --num-agents 5 \
@@ -132,6 +137,7 @@ python train_agents.py \
 ```
 
 ### Phase 2: Emotion Vector Learning
+
 ```bash
 python train_emotion_detector.py \
     --sentiment-dataset your_dataset \
@@ -140,6 +146,7 @@ python train_emotion_detector.py \
 ```
 
 ### Phase 3: Decay Pattern Learning (RL)
+
 ```bash
 python train_decay_rl.py \
     --user-feedback-data feedback.json \
@@ -158,19 +165,25 @@ The system supports several experimental modes:
 ## 🔬 Technical Details
 
 ### Frequency Bias Implementation
+
 Agents are created by modulating token probabilities:
+
 ```python
 logits_agent_i = base_logits + frequency_bias_i
 ```
 
 ### Differential Storage
+
 Instead of storing full weights for each agent:
+
 ```python
 agent_weights = base_weights + IFFT(compressed_delta_i)
 ```
 
 ### Emotion Vector Mapping
+
 Continuous emotion vectors map to agent space navigation:
+
 ```python
 agent_blend = softmax(emotion_vector @ agent_embeddings.T)
 ```
@@ -184,6 +197,7 @@ agent_blend = softmax(emotion_vector @ agent_embeddings.T)
 ## 🤝 Contributing
 
 We welcome contributions! Key areas:
+
 - Extended emotion taxonomies
 - Alternative compression methods
 - Multi-modal emotion detection

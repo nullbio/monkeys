@@ -22,7 +22,7 @@ echo "Master: $MASTER_ADDR:$MASTER_PORT"
 cd /workspace
 if [ ! -d "monkeys" ]; then
     # Replace with your actual repo
-    git clone https://github.com/yourusername/monkeys.git
+    git clone https://github.com/nullbio/monkeys.git
 fi
 cd monkeys
 

@@ -11,7 +11,7 @@
 
 # Setup environment
 cd /workspace
-git clone https://github.com/yourusername/adaptive-llm-agents.git
+git clone https://github.com/nullbio/adaptive-llm-agents.git
 cd adaptive-llm-agents
 
 # Install requirements

@@ -39,7 +39,7 @@ TIME_CHECKER_PID=$!
 # Setup repository
 cd /workspace
 if [ ! -d "adaptive-llm-agents" ]; then
-    git clone https://github.com/yourusername/adaptive-llm-agents.git
+    git clone https://github.com/nullbio/adaptive-llm-agents.git
 fi
 cd adaptive-llm-agents
 

@@ -31,7 +31,7 @@ def setup_environment():
     if not os.path.exists("models"):
         print("Downloading model files...")
         # In practice, you'd clone your repo here
-        os.system("git clone https://github.com/yourusername/adaptive-llm-agents.git .")
+        os.system("git clone https://github.com/nullbio/adaptive-llm-agents.git .")
     
 def main():
     # Setup

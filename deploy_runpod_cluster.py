@@ -177,7 +177,7 @@ export CUDA_VISIBLE_DEVICES=0
 # Clone repository (if not exists)
 if [ ! -d "/workspace/adaptive-llm-agents" ]; then
     cd /workspace
-    git clone https://github.com/yourusername/adaptive-llm-agents.git
+    git clone https://github.com/nullbio/adaptive-llm-agents.git
     cd adaptive-llm-agents
     pip install -r requirements.txt
 else

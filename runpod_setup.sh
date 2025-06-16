@@ -10,7 +10,7 @@
 # Once connected via SSH or Web Terminal:
 
 # Clone your repo
-git clone https://github.com/yourusername/adaptive-llm-agents.git
+git clone https://github.com/nullbio/adaptive-llm-agents.git
 cd adaptive-llm-agents
 
 # Or upload via runpod CLI:
